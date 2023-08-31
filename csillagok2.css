@@ -1,0 +1,297 @@
+:root {
+  --bg: #e3e4e8;
+  --fg: #17181c;
+  --primary: #255ff4;
+  --yellow: #f4a825;
+  --yellow-t: rgba(244, 168, 37, 0);
+  --bezier: cubic-bezier(0.42, 0, 0.58, 1);
+  --trans-dur: 0.3s;
+  /* font-size: calc(24px + (30 - 24) * (100vw - 320px) / (1280 - 320)); */
+}
+
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.rating_2 {
+  margin: auto;
+}
+.rating_2__display {
+  font-size: 1.8em;
+  font-weight: 500;
+  min-height: 1.25em;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  padding-top: 0.5rem;
+  text-align: center;
+}
+.rating_2__stars {
+  display: flex;
+  /* padding-bottom: 0.375em; */
+  padding-top: 6.4rem;
+  position: relative;
+}
+.rating_2__star {
+  display: block;
+  overflow: visible;
+  pointer-events: none;
+  width: 4em;
+  height: 4em;
+}
+.rating_2__star-ring,
+.rating_2__star-fill,
+.rating_2__star-line,
+.rating_2__star-stroke {
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.rating_2__star-ring,
+.rating_2__star-fill,
+.rating_2__star-line {
+  stroke: var(--yellow);
+}
+.rating_2__star-fill {
+  fill: var(--yellow);
+  transform: scale(0);
+  transition: fill var(--trans-dur) var(--bezier),
+    transform var(--trans-dur) var(--bezier);
+}
+.rating_2__star-stroke {
+  stroke: #c7cad1;
+  transition: stroke var(--trans-dur);
+}
+.rating_2__label {
+  cursor: pointer;
+  padding: 0.125em;
+}
+.rating_2__label--delay1 .rating_2__star-ring,
+.rating_2__label--delay1 .rating_2__star-fill,
+.rating_2__label--delay1 .rating_2__star-line,
+.rating_2__label--delay1 .rating_2__star-stroke {
+  animation-delay: 0.05s;
+}
+.rating_2__label--delay2 .rating_2__star-ring,
+.rating_2__label--delay2 .rating_2__star-fill,
+.rating_2__label--delay2 .rating_2__star-line,
+.rating_2__label--delay2 .rating_2__star-stroke {
+  animation-delay: 0.1s;
+}
+.rating_2__label--delay3 .rating_2__star-ring,
+.rating_2__label--delay3 .rating_2__star-fill,
+.rating_2__label--delay3 .rating_2__star-line,
+.rating_2__label--delay3 .rating_2__star-stroke {
+  animation-delay: 0.15s;
+}
+.rating_2__label--delay4 .rating_2__star-ring,
+.rating_2__label--delay4 .rating_2__star-fill,
+.rating_2__label--delay4 .rating_2__star-line,
+.rating_2__label--delay4 .rating_2__star-stroke {
+  animation-delay: 0.2s;
+}
+.rating_2__input {
+  -webkit-appearance: none;
+  appearance: none;
+}
+.rating_2__input:hover ~ [data-rating]:not([hidden]) {
+  display: none;
+}
+.rating_2__input-1:hover ~ [data-rating="6"][hidden],
+.rating_2__input-2:hover ~ [data-rating="7"][hidden],
+.rating_2__input-3:hover ~ [data-rating="8"][hidden],
+.rating_2__input-4:hover ~ [data-rating="9"][hidden],
+.rating_2__input-5:hover ~ [data-rating="10"][hidden],
+.rating_2__input:checked:hover ~ [data-rating]:not([hidden]) {
+  display: block;
+}
+.rating_2__input-1:hover
+  ~ .rating_2__label:first-of-type
+  .rating_2__star-stroke,
+.rating_2__input-2:hover
+  ~ .rating_2__label:nth-of-type(-n + 2)
+  .rating_2__star-stroke,
+.rating_2__input-3:hover
+  ~ .rating_2__label:nth-of-type(-n + 3)
+  .rating_2__star-stroke,
+.rating_2__input-4:hover
+  ~ .rating_2__label:nth-of-type(-n + 4)
+  .rating_2__star-stroke,
+.rating_2__input-5:hover
+  ~ .rating_2__label:nth-of-type(-n + 5)
+  .rating_2__star-stroke {
+  stroke: var(--yellow);
+  transform: scale(1);
+}
+.rating_2__input-1:checked
+  ~ .rating_2__label:first-of-type
+  .rating_2__star-ring,
+.rating_2__input-2:checked
+  ~ .rating_2__label:nth-of-type(-n + 2)
+  .rating_2__star-ring,
+.rating_2__input-3:checked
+  ~ .rating_2__label:nth-of-type(-n + 3)
+  .rating_2__star-ring,
+.rating_2__input-4:checked
+  ~ .rating_2__label:nth-of-type(-n + 4)
+  .rating_2__star-ring,
+.rating_2__input-5:checked
+  ~ .rating_2__label:nth-of-type(-n + 5)
+  .rating_2__star-ring {
+  animation-name: starRing;
+}
+.rating_2__input-1:checked
+  ~ .rating_2__label:first-of-type
+  .rating_2__star-stroke,
+.rating_2__input-2:checked
+  ~ .rating_2__label:nth-of-type(-n + 2)
+  .rating_2__star-stroke,
+.rating_2__input-3:checked
+  ~ .rating_2__label:nth-of-type(-n + 3)
+  .rating_2__star-stroke,
+.rating_2__input-4:checked
+  ~ .rating_2__label:nth-of-type(-n + 4)
+  .rating_2__star-stroke,
+.rating_2__input-5:checked
+  ~ .rating_2__label:nth-of-type(-n + 5)
+  .rating_2__star-stroke {
+  animation-name: starStroke;
+}
+.rating_2__input-1:checked
+  ~ .rating_2__label:first-of-type
+  .rating_2__star-line,
+.rating_2__input-2:checked
+  ~ .rating_2__label:nth-of-type(-n + 2)
+  .rating_2__star-line,
+.rating_2__input-3:checked
+  ~ .rating_2__label:nth-of-type(-n + 3)
+  .rating_2__star-line,
+.rating_2__input-4:checked
+  ~ .rating_2__label:nth-of-type(-n + 4)
+  .rating_2__star-line,
+.rating_2__input-5:checked
+  ~ .rating_2__label:nth-of-type(-n + 5)
+  .rating_2__star-line {
+  animation-name: starLine;
+}
+.rating_2__input-1:checked
+  ~ .rating_2__label:first-of-type
+  .rating_2__star-fill,
+.rating_2__input-2:checked
+  ~ .rating_2__label:nth-of-type(-n + 2)
+  .rating_2__star-fill,
+.rating_2__input-3:checked
+  ~ .rating_2__label:nth-of-type(-n + 3)
+  .rating_2__star-fill,
+.rating_2__input-4:checked
+  ~ .rating_2__label:nth-of-type(-n + 4)
+  .rating_2__star-fill,
+.rating_2__input-5:checked
+  ~ .rating_2__label:nth-of-type(-n + 5)
+  .rating_2__star-fill {
+  animation-name: starFill;
+}
+.rating_2__input-1:not(:checked):hover
+  ~ .rating_2__label:first-of-type
+  .rating_2__star-fill,
+.rating_2__input-2:not(:checked):hover
+  ~ .rating_2__label:nth-of-type(2)
+  .rating_2__star-fill,
+.rating_2__input-3:not(:checked):hover
+  ~ .rating_2__label:nth-of-type(3)
+  .rating_2__star-fill,
+.rating_2__input-4:not(:checked):hover
+  ~ .rating_2__label:nth-of-type(4)
+  .rating_2__star-fill,
+.rating_2__input-5:not(:checked):hover
+  ~ .rating_2__label:nth-of-type(5)
+  .rating_2__star-fill {
+  fill: var(--yellow-t);
+}
+.rating_2__sr {
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17181c;
+    --fg: #e3e4e8;
+  }
+
+  .rating_2 {
+    margin: auto;
+  }
+  .rating_2__star-stroke {
+    stroke: #454954;
+  }
+}
+@keyframes starRing {
+  from,
+  20% {
+    animation-timing-function: ease-in;
+    opacity: 1;
+    r: 8px;
+    stroke-width: 16px;
+    transform: scale(0);
+  }
+  35% {
+    animation-timing-function: ease-out;
+    opacity: 0.5;
+    r: 8px;
+    stroke-width: 16px;
+    transform: scale(1);
+  }
+  50%,
+  to {
+    opacity: 0;
+    r: 16px;
+    stroke-width: 0;
+    transform: scale(1);
+  }
+}
+@keyframes starFill {
+  from,
+  40% {
+    animation-timing-function: ease-out;
+    transform: scale(0);
+  }
+  60% {
+    animation-timing-function: ease-in-out;
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes starStroke {
+  from {
+    transform: scale(1);
+  }
+  20%,
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes starLine {
+  from,
+  40% {
+    animation-timing-function: ease-out;
+    stroke-dasharray: 1 23;
+    stroke-dashoffset: 1;
+  }
+  60%,
+  to {
+    stroke-dasharray: 12 12;
+    stroke-dashoffset: -12;
+  }
+}

@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* html {
+  height: 100%;
+} */
+
+#hamarosan {
+  background: #edecec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.container-hamarosan {
+  display: flex;
+  justify-content: center;
+  width: 80vw;
+  padding: 16rem 8rem;
+}
+
+.card {
+  background: #222;
+  border-radius: 9px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  width: 30vw;
+  height: 25vw;
+  margin: 0.1rem;
+  transition: width 1s cubic-bezier(0.27, 0.39, 0.36, 1);
+}
+
+.card:hover {
+  width: 65vw;
+  border: 0.2rem solid #888;
+}
+
+.card1 {
+  background-image: url("https://images8.alphacoders.com/100/1003220.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.card1 .title img {
+  width: 150px;
+  position: absolute;
+  bottom: 30px;
+  left: 15px;
+}
+
+.card2 {
+  background-image: url("https://images6.alphacoders.com/104/1045634.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.card2 .title img {
+  width: 110px;
+  position: absolute;
+  bottom: 30px;
+  left: 15px;
+}
+
+.card3 {
+  background-image: url("https://images6.alphacoders.com/101/1012489.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.card3 .title img {
+  width: 90px;
+  position: absolute;
+  bottom: 5px;
+  left: 15px;
+}

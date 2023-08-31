@@ -1,0 +1,75 @@
+.overlay {
+  overflow-x: hidden;
+}
+
+.overlay.active .overlay-svg svg {
+  transform: translate(-50%, -60%);
+  width: 250%;
+}
+
+.overlay-svg {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.overlay-svg svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  transition: 1s ease;
+}
+
+.video-wrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.ResponsiveYTPlayer {
+  transform: scale(1.5);
+  transform-origin: 50% 50%;
+}
+/*
+.video-wrapper iframe {
+  width:130%;
+  height:130%;
+  position:absolute;
+  top:50%;
+  right:0;
+  transform:translate(-50%,50%);
+  object-fit:cover;
+}*/
+
+/* Autoplay by Katheryn Guthrie
+https://codepen.io/katguth3/pen/jmOrPZ
+*/
+.ResponsiveYTPlayer {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+.ResponsiveYTPlayer iframe,
+.ResponsiveYTPlayer object,
+.ResponsiveYTPlayer embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
